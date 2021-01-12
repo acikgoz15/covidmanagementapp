@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("../img/leo.jpg");
+            background-color: rgb(154, 182, 51);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav {
+            background-color: rgb(132, 134, 136);
+        }
+
+        .button {
+            background-color: #9ac5c7;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: rgb(50, 90, 139)
+        }
+
+        footer {
+            color: rgb(15, 5, 34);
+            background-color: rgb(132, 134, 136);
+            position: relative;
+            margin-top: +400px;
+            clear: both;
+            width: 100%;
+        }
+    </style>
+    <title> TVMS - {% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/mymovies.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" aria-label="main navigation">
+            <div class="navbar-brand">
+
+                <span class="navbar-item">
+                    <a class="button is-link" href="{{ url_for('entrance') }}">Sign In</a>
+                </span>
+            </div>
+        </nav>
+
+    </header>
+    {% block content %} <h1 style="color:rgba(8, 8, 110, 0.856);text-align:center;margin-top: 200px;"> TEST & VACCINE
+        MANAGEMENT SYSTEM </h1>
+    <p>Have a nice {{day}}</p>
+    <p>{{userinfo}}</p>
+
+
+    <form>
+        Did you find our site useful?(No 1-5 Yes)<br>
+        <input type="radio" name="colors" id="one" onclick="mynewFunction()">1<br>
+        <input type="radio" name="colors" id="two" onclick="mynewFunction()">2<br>
+        <input type="radio" name="colors" id="three" onclick="mynewFunction()">3<br>
+        <input type="radio" name="colors" id="four" onclick="mynewFunction()">4<br>
+        <input type="radio" name="colors" id="five" onclick="mynewFunction()">5
+    </form>
+    <p id="text0" style="display:block">Please inform us!</p>
+    <p id="text1" style="display:none">Thanks for your feedback! Sorry for the dissatisfaction. We are working on
+        improvements.</p>
+    <p id="text2" style="display:none">Thanks for your feedback! (2)</p>
+    <p id="text3" style="display:none">Thanks for your feedback! (3)</p>
+    <p id="text4" style="display:none">Thanks for your feedback! (4)</p>
+    <p id="text5" style="display:none">Thanks for your full grade feedback!</p>
+
+
+    <p>Can you help us promote our site by sharing? </p>
+
+    <label for="myCheck">Yes:</label>
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+    <p id="text" style="display:none">Thanks...</p>
+
+    <script>
+        function myFunction() {
+            var checkBox = document.getElementById("myCheck");
+            var text = document.getElementById("text");
+            if (checkBox.checked == true) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+
+        function mynewFunction() {
+            var radioBox1 = document.getElementById("one");
+            var radioBox2 = document.getElementById("two");
+            var radioBox3 = document.getElementById("three");
+            var radioBox4 = document.getElementById("four");
+            var radioBox5 = document.getElementById("five");
+            text1 = document.getElementById("text0");
+            if (radioBox1.checked == true) {
+                text1.style.display = "none";
+                text.style.display = "none";
+                text = document.getElementById("text1", nov = " abov");
+                text.style.display = "block";
+            }
+            else if (radioBox2.checked == true) {
+                text1.style.display = "none";
+                text.style.display = "none";
+                text = document.getElementById("text2");
+                text.style.display = "block";
+            }
+            else if (radioBox3.checked == true) {
+                text1.style.display = "none";
+                text.style.display = "none";
+                text = document.getElementById("text3");
+                text.style.display = "block";
+            }
+            else if (radioBox4.checked == true) {
+                text1.style.display = "none";
+                text.style.display = "none";
+                text = document.getElementById("text4");
+                text.style.display = "block";
+            }
+            else if (radioBox5.checked == true) {
+                text1.style.display = "none";
+                text.style.display = "none";
+                text = document.getElementById("text5");
+                text.style.display = "block";
+            } else {
+                text1 = document.getElementById("text0");
+
+                text1.style.display = "none";
+            }
+
+
+        }
+
+    </script>
+<!-- 
+
+    <form action="" method="post">
+        <p><input type=text name=username /></p>
+        <p<<input type=submit value=Login />
+        </p>
+    </form> -->
+
+    
+
+    <!-- 
+    <td scope="col"> <a href="{{ url_for('logout') }} "><button type="button" class="btn btn-info">Log Out</button></a>
+    </td> -->
+    {% endblock %}
+    <footer>&copy Istanbul Technical University 2020</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block title %}Personnel{% endblock %}
+{% block content %}
+
+<div>
+    <h1>Personnel Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Personnel ID</th>
+                <th scope="col">Test Center ID</th>
+                <th scope="col">Vaccine Center ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Age</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Phone Number</th>
+                <td scope="col"> <a href="{{ url_for('personnel_add') }} "><button type="button" class="btn btn-info">Add</button></a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personnel in personnels %}
+            <tr>
+                <td scope="col"> {{personnel[0]}} </td>
+                <td scope="col"> {{personnel[1]}} </td>
+                <td scope="col"> {{personnel[2]}} </td>
+                <td scope="col"> {{personnel[3]}} </td>
+                <td scope="col"> {{personnel[4]}} </td>
+                <td scope="col"> {{personnel[5]}} </td>
+                <td scope="col"> {{personnel[6]}} </td>
+                <td scope="col"> {{personnel[7]}} </td>
+                <script>
+                    localStorage.setItem('{{personnel[0]}}', "{{personnel[7]}}");
+                </script>
+
+                <td scope="col"> <a href="{{ url_for('personnel_update', update = '%s'|format(personnel[0])) }} "><button
+                            type="button" class="btn btn-warning">Update</button></a></td>
+                <td scope="col"> <a href="{{ url_for('personnel_delete', delete = '%s'|format(personnel[0])) }} "><button
+                            type="button" class="btn btn-danger">Delete</button></a></td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+<h1>Hospital - Test Center - Personnel Table</h1>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Hospital</th>
+            <th scope="col">Test Center Number</th>
+            <th scope="col">Personnel Name</th>
+            <th scope="col">Personnel Surname</th>
+
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for htp in htps %}
+        <tr>
+            <td scope="col"> {{htp[0]}} </td>
+            <td scope="col"> {{htp[1]}} </td>
+            <td scope="col"> {{htp[2]}} </td>
+            <td scope="col"> {{htp[3]}} </td>
+
+            {% endfor %}
+    </tbody>
+</table>
+
+<h1>Hospital - Vaccine Center - Personnel Table</h1>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Hospital</th>
+            <th scope="col">Vaccine Center Number</th>
+            <th scope="col">Personnel Name</th>
+            <th scope="col">Personnel Surname</th>
+
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for hvp in hvps %}
+        <tr>
+            <td scope="col"> {{hvp[0]}} </td>
+            <td scope="col"> {{hvp[1]}} </td>
+            <td scope="col"> {{hvp[2]}} </td>
+            <td scope="col"> {{hvp[3]}} </td>
+
+            {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}

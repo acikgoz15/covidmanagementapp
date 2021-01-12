@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Home</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body {
+                background: #eee;
+            }
+            span {
+                font-size: 15px;
+            }          
+            .box {
+                padding: 60px 0;
+            }
+            .box-part {
+                background: #FFF;
+                border-radius: 0;
+                padding: 60px 10px;
+                margin: 30px 0;
+            }
+            .text {
+                margin: 20px 0;
+            }
+            .fa {
+                color: #4183D7;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <h3>HSS</h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto"></ul>
+              <form class="form-inline my-2 my-lg-0 ">
+                  <a class="nav-link " href="{{url_for('hospital_page')}}">
+                      <button class="btn btn-secondary my-2 my-sm-0 " type="button">Sign In</button>
+                  </a>
+                  <a class="nav-link " href="{{url_for('hospital_page')}}">
+                      <button class="btn btn-secondary my-2 my-sm-0" type="button">Sign Up</button>
+                  </a>
+                </form>
+                
+            </div>
+          </nav>
+          <a
+            class="weatherwidget-io"
+            href="https://forecast7.com/en/41d0128d98/istanbul/?unit=us"
+            data-label_1="ISTANBUL"
+            data-label_2="WEATHER"
+            data-theme="weather_one">ISTANBUL WEATHER</a>
+        
+
+          <div>
+              <div class="container">
+    
+<div class = "jumbotron">
+    <h1>Welcome to Hospital Support Service</h1>
+</div>
+</div>
+          </div>
+          <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+              <small>Hospital Support Service</small>
+            </div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script>
+          !function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = 'https://weatherwidget.io/js/widget.min.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+              }
+          }(document, 'script', 'weatherwidget-io-js');
+      </script>
+    </body>
+</html>

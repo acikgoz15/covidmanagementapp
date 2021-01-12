@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}Test Center Update{% endblock %}
+{% block content %}
+<div>
+    <h1>Update Test Center</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                <h3>{{ form.hospital_id.label(class="form-control-label") }}</h3>
+                <h5>{{ result[1] }}</h5>
+                {% if form.hospital_id.errors %}
+                {{ form.hospital_id(class="form-control form-control-lg
+                is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.hospital_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.hospital_id(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <div class="form-group">
+                <h3>{{ form.test_stock.label(class="form-control-label") }}</h3>
+                <h5>{{ result[2] }}</h5>
+                {% if form.test_stock.errors %}
+                {{ form.test_stock(class="form-control form-control-lg
+                is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.test_stock.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.test_stock(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <div class="form-group">
+                <h3>{{ form.personnel_number.label(class="form-control-label") }}</h3>
+                <h5>{{ result[3] }}</h5>
+                {% if form.personnel_number.errors %}
+                {{ form.personnel_number(class="form-control form-control-lg
+                is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.personnel_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.personnel_number(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+{% endblock %}

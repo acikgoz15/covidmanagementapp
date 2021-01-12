@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block title %}Vaccine Center{% endblock %}
+{% block content %}
+
+<div>
+    <h1>Vaccine Center Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Vaccine Center ID</th>
+                <th scope="col">Hospital ID</th>
+                <th scope="col">Vaccine Stock</th>
+                <th scope="col">#Personnel</th>
+                <th scope="col"> </th>
+                <th scope="col"> </th>
+                <td scope="col"> <a href="{{ url_for('vaccine_add') }} "><button type="button" class="btn btn-info">Add</button></a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vaccine in vaccines %}
+            <tr>
+                <td scope="col"> {{vaccine[0]}} </td>
+                <td scope="col"> {{vaccine[1]}} </td>
+                <td scope="col"> {{vaccine[2]}} </td>
+                <td scope="col"> {{vaccine[3]}} </td>
+                <td scope="col"> {{vaccine[4]}} </td>
+                <td scope="col"> {{vaccine[5]}} </td>
+                <script>
+                    localStorage.setItem('{{vaccine[0]}}', "{{vaccine[5]}}");
+                </script>
+
+                <td scope="col"> <a href="{{ url_for('vaccine_update', update = '%s'|format(vaccine[0])) }} "><button
+                            type="button" class="btn btn-warning">Update</button></a></td>
+                <td scope="col"> <a href="{{ url_for('vaccine_delete', delete = '%s'|format(vaccine[0])) }} "><button
+                            type="button" class="btn btn-danger">Delete</button></a></td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <h1>Vaccine Center-Hospital Table</h1>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">City ID</th>
+            <th scope="col">Hospital Name</th>
+            <th scope="col">Vaccine Stock</th>
+            <th scope="col">#Personnel</th>
+
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for vac_hosp in vaccine_hospital %}
+        <tr>
+            <td scope="col"> {{vac_hosp[0]}} </td>
+            <td scope="col"> {{vac_hosp[1]}} </td>
+            <td scope="col"> {{vac_hosp[2]}} </td>
+            <td scope="col"> {{vac_hosp[3]}} </td>
+
+            {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}

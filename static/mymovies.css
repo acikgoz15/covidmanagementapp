@@ -1,0 +1,30 @@
+h1{
+    color:rgb(41, 14, 53)
+}
+
+footer{
+    text-align: center;
+}
+
+body {
+    background-image: url("https://unsplash.com/photos/ci2rHJqgC1M?auto=compress&cs=tinysrgb&h=350");
+    background-color: rgb(165, 184, 201);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav{ 
+    background-color: rgb(72, 69, 110);
+}
+.button {
+    background-color: #9ac5c7;
+    border: none;
+    color: rgb(73, 3, 3);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
