@@ -2,7 +2,7 @@ from flask import Flask, render_template,flash, redirect, url_for, request, sess
 import psycopg2
 from forms import add_hospital, update_hospital, add_vaccinecenter, add_testcenter , add_personnel, add_patient, update_testcenter,update_vaccinecenter,update_patient,update_personnel
 from datetime import datetime
-
+import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'f5b9ac4eddb1942feeb7d826b76b4a3a'
 #session['username'] = 'admin'
@@ -855,4 +855,7 @@ def vaccine_delete(delete):
 
            
 if __name__ == '__main__':
-    app.run(host = "127.0.0.1", port = 8080, debug=True)
+    # app.run(host = "127.0.0.1", port = process.env.PORT or 8080, debug=True)
+    #app.run(host = "127.0.0.1", port = process.env.PORT or 8080, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    #process.env.PORT || 3000
